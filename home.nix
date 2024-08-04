@@ -73,4 +73,18 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  programs.bash = {
+    enable = true;
+    shellAliases = {
+      sl = "ls";
+      myhint = "echo sudo nixos-rebuild switch --flake ./.#iver";
+    };
+  };
+  programs.git = {
+    enable = true;
+    userName = "iver";
+    userEmail = "iverrog@gmail.com";
+  };
+
 }
