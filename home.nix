@@ -78,6 +78,7 @@
     enable = true;
     shellAliases = {
       sl = "ls";
+      vim = "nvim";
       myhint = "echo sudo nixos-rebuild switch --flake ./.#iver";
     };
   };

@@ -111,6 +111,8 @@
     tmux
     wget
     git
+    cargo
+    gcc
   ];
 
   programs.neovim.defaultEditor = true;
