@@ -115,6 +115,8 @@
     gcc
   ];
 
+  fonts.packages = with pkgs; [ (nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) ];
+
   programs.neovim.defaultEditor = true;
 
 
