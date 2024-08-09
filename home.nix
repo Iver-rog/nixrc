@@ -2,7 +2,8 @@
 
 {
   imports = [
-    ../lib-home/tmux.nix
+    ./lib-home/tmux.nix
+    ./lib-home/tmux.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -89,19 +90,5 @@
     enable = true;
     userName = "iver";
     userEmail = "iverrog@gmail.com";
-  };
-  programs.neovim = {
-    enable = true;
-    plugins = with pkgs.vimPlugins; [
-      nvim-lspconfig
-      nvim-treesitter.withAllGrammars
-      gruvbox-material
-    ];
-    extraPackages = with pkgs; [
-      # Formatters
-      # LSP
-      rust-analyzer
-      # Tools
-    ];
   };
 }
