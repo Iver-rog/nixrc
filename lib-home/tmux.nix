@@ -3,6 +3,7 @@
 {
   programs.tmux = {
     enable = true;
+    mouse = true;
     terminal = "tmux-256color";
     historyLimit = 100000;
     plugins = with pkgs;[
@@ -30,6 +31,10 @@
           set -g @continuum-boot 'on'
           set -g @continuum-save-interval '10'
         '';
+      }
+      {
+        plugin = tmuxPlugins.vim-tmux-navigator;
+
       }
     ];
   };
