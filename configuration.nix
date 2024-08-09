@@ -81,6 +81,7 @@
     extraGroups = [ "networkmanager" "wheel" "openrazer" ];
     packages = with pkgs; [
       neovim
+      tmux
       firefox
       thunderbird
       freecad

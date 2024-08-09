@@ -1,6 +1,9 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+    ../lib-home/tmux.nix
+  ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "iver";
@@ -101,5 +104,4 @@
       # Tools
     ];
   };
-
 }
