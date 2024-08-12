@@ -73,6 +73,8 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  services.flatpak.enable = true;
+
   hardware.openrazer.enable = true;
 
   users.users.iver = {
@@ -81,11 +83,14 @@
     extraGroups = [ "networkmanager" "wheel" "openrazer" ];
     packages = with pkgs; [
       neovim
+      rust-analyzer
       tmux
       firefox
       thunderbird
       freecad
       htop
+      gimp
+      darktable
     ];
   };
   
