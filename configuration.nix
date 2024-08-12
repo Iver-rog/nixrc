@@ -91,6 +91,7 @@
       htop
       gimp
       darktable
+      vscode
     ];
   };
   
