@@ -88,10 +88,15 @@
       firefox
       thunderbird
       freecad
+      vlc
+      libreoffice-qt6-fresh
       htop
       gimp
       darktable
       vscode
+      chromium
+      joplin-desktop
+      maestral-gui
     ];
   };
   
@@ -126,6 +131,7 @@
 
   programs.neovim.defaultEditor = true;
 
+  programs.appimage.binfmt = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
