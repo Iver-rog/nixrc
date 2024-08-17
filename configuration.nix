@@ -91,12 +91,14 @@
       vlc
       libreoffice-qt6-fresh
       htop
+      blender
       gimp
       darktable
       vscode
       chromium
       joplin-desktop
-      maestral-gui
+      maestral-gui #Dropbox client
+      mediawriter
     ];
   };
   
