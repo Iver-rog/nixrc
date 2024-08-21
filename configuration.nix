@@ -75,6 +75,7 @@
 
   services.flatpak.enable = true;
 
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
   hardware.openrazer.enable = true;
 
   users.users.iver = {
@@ -99,6 +100,7 @@
       joplin-desktop
       maestral-gui #Dropbox client
       mediawriter
+      inkscape
     ];
   };
   
@@ -119,6 +121,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    kdePackages.partitionmanager
     polychromatic
     openrazer-daemon
     neovim 
