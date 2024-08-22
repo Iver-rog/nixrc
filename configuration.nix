@@ -101,6 +101,7 @@
       maestral-gui #Dropbox client
       mediawriter
       inkscape
+      entr
     ];
   };
   
@@ -121,6 +122,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    alacritty
     kdePackages.partitionmanager
     polychromatic
     openrazer-daemon
@@ -128,8 +130,7 @@
     tmux
     wget
     git
-    cargo
-    gcc
+    nixfmt
   ];
 
   fonts.packages = with pkgs; [ (nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) ];
