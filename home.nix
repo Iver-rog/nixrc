@@ -4,6 +4,7 @@
   imports = [
     ./lib-home/tmux.nix
     ./lib-home/nvim.nix
+    ./lib-home/alacritty.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
