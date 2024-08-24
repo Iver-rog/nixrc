@@ -131,6 +131,9 @@
     wget
     git
     nixfmt
+    #--- Rust ---
+    gnuplot
+
   ];
 
   fonts.packages = with pkgs; [ (nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) ];

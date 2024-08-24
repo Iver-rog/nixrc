@@ -26,6 +26,7 @@
       modules = [
         ./configuration.nix
         inputs.home-manager.nixosModules.default
+        # ./shell.nix
       ];
     };
   };
