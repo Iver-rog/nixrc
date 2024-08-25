@@ -1,11 +1,16 @@
 { pkgs, ... }:
-
+let
+  resurrectDirPath = "~/.config/tmux/resurrect";
+in
 {
   programs.tmux = {
     enable = true;
+    prefix = "C-Space";
     mouse = true;
     terminal = "tmux-256color";
     historyLimit = 100000;
+    baseIndex = 1;
+    
     plugins = with pkgs;[
       tmuxPlugins.better-mouse-mode
       {
@@ -22,7 +27,18 @@
           set -g @resurrect-strategy-vim 'session'
           set -g @resurrect-strategy-nvim 'session'
           set -g @resurrect-capture-pane-contents 'on'
-        '';
+          
+          # This three lines are specific to NixOS and they are intended
+          # to edit the tmux_resurrect_* files that are created when tmux
+          # session is saved using the tmux-resurrect plugin. Without going
+          # into too much details the strings that are saved for some applications
+          # such as nvim, vim, man... when using NixOS, appimage, asdf-vm into the
+          # tmux_resurrect_* files can't be parsed and restored. This addition
+          # makes sure to fix the tmux_resurrect_* files so they can be parsed by
+          # the tmux-resurrect plugin and successfully restored.
+          set -g @resurrect-dir ${resurrectDirPath}
+          set -g @resurrect-hook-post-save-all 'sed -i -E "s|(pane.*nvim\s*:)[^;]+;.*\s([^ ]+)$|\1nvim \2|" ${resurrectDirPath}/last'
+          '';
       }
       {
         plugin = tmuxPlugins.continuum;
