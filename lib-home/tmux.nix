@@ -9,7 +9,10 @@ in
     mouse = true;
     terminal = "tmux-256color";
     historyLimit = 100000;
+    keyMode = "vi";
     baseIndex = 1;
+    clock24 = true;
+    sensibleOnTop = true;
     
     plugins = with pkgs;[
       tmuxPlugins.better-mouse-mode
@@ -41,16 +44,15 @@ in
           '';
       }
       {
+        plugin = tmuxPlugins.vim-tmux-navigator;
+      }
+      {
         plugin = tmuxPlugins.continuum;
         extraConfig = ''
           set -g @continuum-restore 'on'
           set -g @continuum-boot 'on'
           set -g @continuum-save-interval '10'
         '';
-      }
-      {
-        plugin = tmuxPlugins.vim-tmux-navigator;
-
       }
     ];
   };
