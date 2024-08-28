@@ -3,7 +3,7 @@
 {
   imports = [
     ./lib-home/tmux.nix
-    ./lib-home/nvim.nix
+    ./lib-home/nvim/nvim.nix
     ./lib-home/alacritty.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
@@ -84,6 +84,7 @@
     shellAliases = {
       sl = "ls";
       myhint = "echo sudo nixos-rebuild switch --flake ./.#iver";
+      grep = "grep --color=auto";
     };
   };
   programs.git = {
