@@ -98,6 +98,7 @@
       mediawriter
       inkscape
       orca-slicer
+      octave
       # Terminal programs
       htop
       neovim

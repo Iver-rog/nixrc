@@ -85,6 +85,7 @@
       sl = "ls";
       myhint = "echo sudo nixos-rebuild switch --flake ./.#iver";
       grep = "grep --color=auto";
+      octave = "octave --silent";
     };
   };
   programs.git = {
@@ -97,5 +98,10 @@
     diff-so-fancy = {
       enable = true;
     };
+  };
+  home.file = {
+  ".octaverc".text = ''
+  PS1 ('\033[34m\033[039;044m octave:\#\033[049;034m\033[032;001m\w> \033[039;000m')
+  '';
   };
 }
