@@ -83,15 +83,11 @@
     description = "Iver Rogstadkjernet";
     extraGroups = [ "networkmanager" "wheel" "openrazer" ];
     packages = with pkgs; [
-      neovim
-      rust-analyzer
-      tmux
       firefox
       thunderbird
       freecad
       vlc
       libreoffice-qt6-fresh
-      htop
       blender
       gimp
       darktable
@@ -101,8 +97,14 @@
       maestral-gui #Dropbox client
       mediawriter
       inkscape
-      entr
       orca-slicer
+      # Terminal programs
+      htop
+      neovim
+      rust-analyzer
+      tmux
+      bat
+      entr
     ];
   };
   
