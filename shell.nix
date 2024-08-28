@@ -1,20 +1,23 @@
 { pkgs ? import <nixpkgs> {} }:
   pkgs.mkShell {
     # nativeBuildInputs is usually what you want -- tools you need to run
-  packages = [
-    pkgs.gcc
+    nativeBuildInputs = with pkgs; [
+      nix 
+      home-manager 
+      git 
+      gcc
+      cargo
+      rustc
+      rustfmt
+      clippy
+      ];
 
-    (pkgs.python3.withPackages (python-pkgs: [
-      python-pkgs.numpy
-      python-pkgs.sympy
-    ]))
-
-    pkgs.cargo 
-    pkgs.rustc
-    pkgs.rustfmt
-    pkgs.clippy
-
-  ];
+    buildInputs = with pkgs; [
+      (python3.withPackages (python-pkgs: [
+        python-pkgs.numpy
+        python-pkgs.sympy
+      ]))
+    ];
 }
 # {
 #   description = "A Nix-flake-based Rust development environment";
