@@ -91,5 +91,11 @@
     enable = true;
     userName = "iver";
     userEmail = "iverrog@gmail.com";
+    # difftastic = {
+    #   enable = true;
+    # };
+    diff-so-fancy = {
+      enable = true;
+    };
   };
 }
