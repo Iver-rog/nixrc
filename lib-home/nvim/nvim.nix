@@ -1,44 +1,17 @@
 { pkgs, ... }:
-let 
-  myConfig = pkgs.vimUtils.buildVimPlugin {
-    name = "iver-lua-config";
-    src = ./nvim;
-  };
-# let
-#   myConfig = pkgs.neovim.override {
-#     configure = {
-#       customRc = ''
-#       :colorscheme evening
-#       lua require("init")
-#       '';
-#       packages.myPlugins = with pkgs.vimPlugins; {
-#       start = [
-#         vim-go
-#         MyConfig
-#       ];
-#       opt = [];
-#       };
-#     };
-#   };
-# in
-#   with pkgs;
-#   pkgs.mkShell {
-#     buildInputs = [
-#     myNeovim
-#     ];
-#   }
-in
 {
+  imports = [
+    ./lsp.nix
+  ];
+
   programs.neovim = {
     enable = true;
     vimAlias = true;
     defaultEditor = true;
     plugins = with pkgs.vimPlugins; [
       vim-tmux-navigator
-      nvim-lspconfig
       nvim-treesitter.withAllGrammars
       gruvbox-material
-      vim-nix
       { # Useful plugin to show you pendig keybinds.
         plugin = which-key-nvim;
         type = "lua";
