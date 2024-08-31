@@ -99,13 +99,16 @@
       inkscape
       orca-slicer
       octave
+      teams-for-linux
       # Terminal programs
+      ripgrep # needed dependency for treesitter nvim plugin
       htop
       neovim
       rust-analyzer
       tmux
       bat
       entr
+      poetry #python environment management
     ];
   };
   
