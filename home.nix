@@ -87,6 +87,9 @@
       grep = "grep --color=auto";
       octave = "octave --silent";
     };
+    bashrcExtra = ''
+      eval "$(direnv hook bash)"
+    '';
   };
   programs.git = {
     enable = true;
@@ -100,8 +103,13 @@
     };
   };
   home.file = {
-  ".octaverc".text = ''
-  PS1 ('\033[34m\033[039;044m octave:\#\033[049;034m\033[032;001m\w> \033[039;000m')
-  '';
+    ".octaverc".text = ''
+    PS1 ('\033[34m\033[039;044m octave:\#\033[049;034m\033[032;001m\w> \033[039;000m')
+    '';
+  };
+  programs.direnv = {
+    enable = true;
+    enableBashIntegration = true;
+    nix-direnv.enable = true;
   };
 }
