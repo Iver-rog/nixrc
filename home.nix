@@ -86,6 +86,8 @@
       myhint = "echo sudo nixos-rebuild switch --flake ./.#iver";
       grep = "grep --color=auto";
       octave = "octave --silent";
+      ntnu = "cd /home/iver/Documents/NTNU";
+      rust = "cd /home/iver/Documents/Programering/Rust";
     };
     bashrcExtra = ''
       eval "$(direnv hook bash)"
