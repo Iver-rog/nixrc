@@ -76,7 +76,12 @@
   services.flatpak.enable = true;
 
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
+  config.cudaSupport = true;
+
   hardware.openrazer.enable = true;
+  
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
 
   users.users.iver = {
     isNormalUser = true;
