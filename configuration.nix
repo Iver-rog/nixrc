@@ -88,6 +88,7 @@
     description = "Iver Rogstadkjernet";
     extraGroups = [ "networkmanager" "wheel" "openrazer" ];
     packages = with pkgs; [
+      audacity
       firefox
       thunderbird
       freecad
