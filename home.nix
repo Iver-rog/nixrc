@@ -88,6 +88,7 @@
       octave = "octave --silent";
       ntnu = "cd /home/iver/Documents/NTNU";
       rust = "cd /home/iver/Documents/Programering/Rust";
+      win10 = "quickemu -vm /home/iver/vm/windows-10-International.conf"
     };
     bashrcExtra = ''
       eval "$(direnv hook bash)"
