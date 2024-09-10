@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./vm.nix
       inputs.home-manager.nixosModules.default
     ];
 
@@ -142,6 +143,8 @@
     wget
     git
     nixfmt
+    quickemu
+    # nvim-pkg #custom nvim package
     #--- Rust ---
     gnuplot
   ];

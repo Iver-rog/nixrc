@@ -23,6 +23,7 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
+    (import ./lib-home/vm-script.nix { inherit pkgs; })
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -88,7 +89,6 @@
       octave = "octave --silent";
       ntnu = "cd /home/iver/Documents/NTNU";
       rust = "cd /home/iver/Documents/Programering/Rust";
-      win10 = "quickemu -vm /home/iver/vm/windows-10-International.conf";
     };
     bashrcExtra = ''
       eval "$(direnv hook bash)"
