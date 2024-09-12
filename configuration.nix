@@ -148,6 +148,7 @@
     # nvim-pkg #custom nvim package
     #--- Rust ---
     gnuplot
+    devenv
   ];
 
   fonts.packages = with pkgs; [ (nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) ];
