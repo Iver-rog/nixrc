@@ -19,7 +19,7 @@
         local lspconfig = require('lspconfig')
 
         -- A list of language servers you want to automatically attach
-        local servers = { 'pyright', 'tsserver', 'gopls', 'rust_analyzer', 'clangd' }
+        local servers = { 'pyright', 'tsserver', 'gopls', 'rust_analyzer', 'clangd', 'nil_ls' }
 
         -- Loop through each language server and set up its default configuration
         for _, lsp in ipairs(servers) do
@@ -48,7 +48,7 @@
             ['<Down>'] = cmp.mapping.select_next_item(),
             ['<Up>'] = cmp.mapping.select_prev_item(),
             ['<C-Space>'] = cmp.mapping.complete(),
-            ['<Esc>'] = cmp.mapping.abort(),
+            ['<C-e>'] = cmp.mapping.abort(),
             ['<CR>'] = cmp.mapping.confirm({ select = true }),
           },
           sources = cmp.config.sources({
