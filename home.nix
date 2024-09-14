@@ -92,6 +92,15 @@
     };
     bashrcExtra = ''
       eval "$(direnv hook bash)"
+
+      # function for switching git branches using fzf
+      gitb() {
+        local branches branch
+        branches=$(git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format="%(refname:short)") &&
+        branch=$(echo "$branches" |
+                 fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
+        git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+      }
     '';
   };
   programs.git = {
