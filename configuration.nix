@@ -106,9 +106,11 @@
       orca-slicer
       octave
       teams-for-linux
+      resources
+      paraview
       # Terminal programs
       ripgrep # needed dependency for treesitter nvim plugin
-      htop
+      btop
       neovim
       rust-analyzer
       tmux
@@ -146,7 +148,7 @@
     nixfmt
     quickemu
     # nvim-pkg #custom nvim package
-    #--- Rust ---
+    unzip
     gnuplot
     devenv
   ];
