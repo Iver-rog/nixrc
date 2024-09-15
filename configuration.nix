@@ -113,6 +113,7 @@
       btop
       neovim
       rust-analyzer
+      nil # nix language server
       tmux
       bat
       entr
