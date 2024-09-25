@@ -75,6 +75,12 @@
   # services.xserver.libinput.enable = true;
 
   services.flatpak.enable = true;
+  xdg.portal = {
+    enable = true;
+    # config = {
+    #   default = "kde";
+    # };
+  };
 
   # hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
   # config.cudaSupport = true;
@@ -148,7 +154,6 @@
     git
     nixfmt
     quickemu
-    # nvim-pkg #custom nvim package
     unzip
     gnuplot
     devenv
