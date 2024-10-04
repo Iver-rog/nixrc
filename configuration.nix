@@ -157,6 +157,7 @@
     unzip
     gnuplot
     devenv
+    trash-cli
   ];
 
   fonts.packages = with pkgs; [ (nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) ];
