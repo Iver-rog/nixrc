@@ -19,7 +19,7 @@
         local lspconfig = require('lspconfig')
 
         -- A list of language servers you want to automatically attach
-        local servers = { 'pyright', 'tsserver', 'gopls', 'rust_analyzer', 'clangd', 'nil_ls' }
+        local servers = { 'pyright', 'gopls', 'rust_analyzer', 'clangd', 'nil_ls' }
 
         -- Loop through each language server and set up its default configuration
         for _, lsp in ipairs(servers) do
