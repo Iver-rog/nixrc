@@ -94,10 +94,11 @@
     description = "Iver Rogstadkjernet";
     extraGroups = [ "networkmanager" "wheel" "openrazer" ];
     packages = with pkgs; [
+      zotero
       audacity
       firefox
       thunderbird
-      freecad
+      freecad-wayland
       vlc
       libreoffice-qt6-fresh
       blender
@@ -165,6 +166,11 @@
   programs.neovim.defaultEditor = true;
 
   programs.appimage.binfmt = true;
+
+   nix.extraOptions = ''
+        trusted-users = root iver
+    '';
+
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
