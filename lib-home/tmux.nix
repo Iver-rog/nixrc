@@ -3,19 +3,8 @@ let
   resurrectDirPath = "~/.config/tmux/resurrect";
 
   mkTmuxPlugin = pkgs.tmuxPlugins.mkTmuxPlugin;
-  sessionx = mkTmuxPlugin {
-    pluginName = "sessionx";
-    version = "unstable-2024-08-16";
-    src = pkgs.fetchFromGitHub {
-      owner = "omerxx";
-      repo = "tmux-sessionx";
-      rev = "ecc926e7db7761bfbd798cd8f10043e4fb1b83ba";
-      sha256 = "1qa2a4m75w6k64f52fsw9k6yyiidlxm2q31w8hrsjd5bcdr6dzab";
-    };
-  };
 in
 {
-  home.packages = with pkgs; [ fzf ]; #dependency needed by sessionx
   programs.tmux = {
     enable = true;
     prefix = "C-Space";
