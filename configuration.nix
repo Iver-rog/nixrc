@@ -115,6 +115,7 @@
       teams-for-linux
       resources
       paraview
+      localsend
       # Terminal programs
       ripgrep # needed dependency for treesitter nvim plugin
       btop
