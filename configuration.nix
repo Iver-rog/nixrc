@@ -82,6 +82,11 @@
     # };
   };
 
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = true;
+  };
+
   # hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
   # config.cudaSupport = true;
 
@@ -125,7 +130,7 @@
       tmux
       bat
       entr
-      poetry #python environment management
+      distrobox
     ];
   };
   
