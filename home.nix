@@ -89,6 +89,7 @@
       octave = "octave --silent";
       ntnu = "cd /home/iver/Documents/NTNU";
       rust = "cd /home/iver/Documents/Programering/Rust";
+      nivm = "nvim";
     };
     bashrcExtra = ''
       eval "$(direnv hook bash)"
