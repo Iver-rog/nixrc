@@ -10,6 +10,12 @@
       font = {
         normal = { family = "JetBrainsMono Nerd Font"; style = "Regular"; };
       };
+      # colors = {
+      #   primary ={
+      #     foreground = "#000000";
+      #     background = "#ffe8cf";
+      #   };
+      # };
     };
   };
 }

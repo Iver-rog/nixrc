@@ -6,7 +6,7 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
       ./hardware-configuration.nix
       ./vm.nix
       ./tor.nix
@@ -123,6 +123,7 @@
       paraview
       localsend
       # Terminal programs
+      gh
       ripgrep # needed dependency for treesitter nvim plugin
       btop
       neovim

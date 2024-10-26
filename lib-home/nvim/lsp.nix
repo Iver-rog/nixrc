@@ -7,15 +7,13 @@
     ];
     plugins = with pkgs.vimPlugins; [
       nvim-lspconfig
-      #optional: nvim-cmp for autocompletion
+      # optional: nvim-cmp for autocompletion
       nvim-cmp
       cmp-nvim-lsp
       lspkind-nvim
     ];
     extraConfig = ''
-      " Place your Neovim Lua configuration here
       lua << EOF
-        -- Import the LSP config plugin
         local lspconfig = require('lspconfig')
 
         -- A list of language servers you want to automatically attach
