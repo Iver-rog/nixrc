@@ -12,6 +12,7 @@
       telescope-nvim
       nvim-tree-lua
       gitsigns-nvim
+      mini-nvim # [S]elect [a]round [(] pattern
 
       # == LSP ==
       nvim-lspconfig

@@ -115,3 +115,4 @@ require('telescope').setup {
     }
 
 require("lsp")
+require("mini-nvim")
