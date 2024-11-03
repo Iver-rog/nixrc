@@ -15,12 +15,17 @@
 
       # == LSP ==
       nvim-lspconfig
-      # optional: nvim-cmp for autocompletion
-      nvim-cmp
-      cmp-nvim-lsp
       lspkind-nvim
       # Useful status updates for LSP
       fidget-nvim
+
+      # == Auto Complete ==
+      nvim-cmp
+      lazydev-nvim
+      cmp-nvim-lsp
+      cmp_luasnip
+      cmp-path
+      luasnip
 
       # == debugging ==
       nvim-dap-ui
@@ -30,11 +35,6 @@
     extraPackages = with pkgs; [
       wl-clipboard
       ripgrep # needed dependency for treesitter nvim plugin
-      # Formatters
-      # LSP
-      # rust
-      # rust-analyzer
-      # Tools
 
       # == LSP ==
       rust-analyzer
