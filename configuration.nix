@@ -127,8 +127,6 @@
       ripgrep # needed dependency for treesitter nvim plugin
       btop
       neovim
-      rust-analyzer
-      nil # nix language server
       tmux
       bat
       entr

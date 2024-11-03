@@ -28,7 +28,8 @@
     ];
 
     extraPackages = with pkgs; [
-    wl-clipboard
+      wl-clipboard
+      ripgrep # needed dependency for treesitter nvim plugin
       # Formatters
       # LSP
       # rust
@@ -36,8 +37,11 @@
       # Tools
 
       # == LSP ==
+      rust-analyzer
+      nil # nix language server
       clang-tools #c/c++
       pyright
+      sumneko-lua-language-server
     ];
   };
   xdg.configFile.nvim = {
