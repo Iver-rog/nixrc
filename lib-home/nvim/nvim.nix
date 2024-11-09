@@ -43,6 +43,8 @@
       clang-tools #c/c++
       pyright
       sumneko-lua-language-server
+
+      vscode-extensions.vadimcn.vscode-lldb
     ];
   };
   xdg.configFile.nvim = {
