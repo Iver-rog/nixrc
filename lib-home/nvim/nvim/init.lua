@@ -37,8 +37,10 @@ vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>noholsearch<CR>')
 
 -- Colorscheme
+vim.g.gruvbox_material_diagnostic_text_highlight = false
+vim.g.gruvbox_material_diagnostic_line_highlight = false
+vim.g.gruvbox_material_diagnostic_virtual_text = 'not grey' -- 'grey'
 vim.cmd("colorscheme gruvbox-material")
-vim.g.have_nerd_font = true
 
 -- Line numbers and relative lines
 vim.opt.number = true

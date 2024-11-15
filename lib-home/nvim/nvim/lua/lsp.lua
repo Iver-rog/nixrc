@@ -108,6 +108,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
         callback = vim.lsp.buf.document_highlight,
       })
 
+      -- Change diagnostic symbols in the sign column (gutter)
+      local signs = { Error = '', Warn = '', Hint = '', Info = '' }
+      for type, icon in pairs(signs) do
+        local hl = 'DiagnosticSign' .. type
+        vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+      end
+
       vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
         buffer = event.buf,
         group = highlight_augroup,
