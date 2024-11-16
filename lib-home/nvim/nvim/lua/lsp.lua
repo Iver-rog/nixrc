@@ -81,7 +81,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- Fuzzy find all the symbols in your current workspace.
     --  Similar to document symbols, except searches over your entire project.
     map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
-  
+
     -- Rename the variable under your cursor.
     --  Most Language Servers support renaming across files, etc.
     map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
@@ -168,6 +168,7 @@ vim.list_extend(ensure_installed, {
 -- See `:help cmp`
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
+local lspkind = require 'lspkind'
 luasnip.config.setup {}
 
 cmp.setup {
@@ -176,7 +177,33 @@ cmp.setup {
       luasnip.lsp_expand(args.body)
     end,
   },
+
+  fields = {"abbr", "menu"},
+
+   formatting = {
+    format = lspkind.cmp_format {
+      mode = 'symbol',
+      before = function(_entry, vim_item)
+        if vim_item.menu ~= nil and string.len(vim_item.menu) > 0 then
+          vim_item.menu = string.sub(vim_item.menu, 1, 0) .. ""
+        end
+        return vim_item
+      end,
+    },
+  },
+
   completion = { completeopt = 'menu,menuone,noinsert' },
+
+  window = {
+    completion = cmp.config.window.bordered({
+      border = {"╭","─","╮","│","╯","─","╰","│"},
+      winhighlight = "Normal:None,FloatBorder:QuickFixLine,CursorLine:PmenuThumb,Search:None",
+    }),
+    documentation = cmp.config.window.bordered({
+      border = {"╭","─","╮","│","╯","─","╰","│"},
+      winhighlight = "Normal:None,FloatBorder:QuickFixLine,CursorLine:PmenuThumb,Search:None",
+    })
+  },
 
   -- For an understanding of why these mappings were
   -- chosen, you will need to read `:help ins-completion`
