@@ -1,4 +1,25 @@
-local dap = require('nvim-dap')
+local dap, dapui = require("dap"), require("dapui")
+dap.listeners.before.attach.dapui_config = function()
+  dapui.open()
+end
+dap.listeners.before.launch.dapui_config = function()
+  dapui.open()
+end
+dap.listeners.before.event_terminated.dapui_config = function()
+  dapui.close()
+end
+dap.listeners.before.event_exited.dapui_config = function()
+  dapui.close()
+end
+-- local dap = require('dap')
+-- local ui = require "dapui"
+
+dap.adapters.debugpy = {
+  type = 'executable';
+  command = 'python';
+  -- command = os.getenv('HOME') .. '/.virtualenvs/tools/bin/python';
+  args = { '-m', 'debugpy.adapter' };
+}
 
 dap.adapters.codelldb = {
   type = 'server',
@@ -35,5 +56,5 @@ dap.configurations.rust = {
     showDisassembly = "never",
   },
 }
+require("dapui").setup()
 
-require("nvim-dap-ui").setup()

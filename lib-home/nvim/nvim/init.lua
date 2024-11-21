@@ -40,6 +40,8 @@ vim.keymap.set('n', '<Esc>', '<cmd>noholsearch<CR>')
 vim.g.gruvbox_material_diagnostic_text_highlight = false
 vim.g.gruvbox_material_diagnostic_line_highlight = false
 vim.g.gruvbox_material_diagnostic_virtual_text = 'not grey' -- 'grey'
+-- vim.g.gruvbox_material_foreground = 'hard'
+-- vim.g.gruvbox_material_background = 'hard'
 vim.cmd("colorscheme gruvbox-material")
 
 -- Line numbers and relative lines
@@ -139,4 +141,4 @@ vim.cmd('highlight FoldColumn ctermfg=NONE guifg=NONE')
 
 require("lsp")
 require("mini-nvim")
-require("dap")
+require("debugger")
