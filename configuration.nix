@@ -130,6 +130,7 @@
       bat
       entr
       distrobox
+      git-credential-manager
     (vscode-with-extensions.override {
       vscodeExtensions = with vscode-extensions; [
         bbenoist.nix

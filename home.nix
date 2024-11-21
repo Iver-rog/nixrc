@@ -114,6 +114,9 @@
     diff-so-fancy = {
       enable = true;
     };
+    extraConfig.credential.helper = "manager";
+    extraConfig.credential."https://github.com".username = "Iver-rog";
+    extraConfig.credential.credentialStore = "cache";
   };
   home.file = {
     ".octaverc".text = ''
