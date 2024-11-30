@@ -121,6 +121,7 @@
       resources
       paraview
       localsend
+      transmission-qt
       # Terminal programs
       gh
       ripgrep # needed dependency for treesitter nvim plugin
