@@ -190,7 +190,7 @@
     trash-cli
   ];
 
-  fonts.packages = with pkgs; [ (nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) ];
+  fonts.packages = with pkgs; [ nerd-fonts.jetbrains-mono ];
 
   programs.neovim.defaultEditor = true;
 
