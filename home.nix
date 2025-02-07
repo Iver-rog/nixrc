@@ -90,6 +90,7 @@
       ntnu = "cd /home/iver/Documents/NTNU";
       rust = "cd /home/iver/Documents/Programering/Rust";
       nivm = "nvim";
+      ls = "lsd";
     };
     bashrcExtra = ''
       eval "$(direnv hook bash)"
