@@ -5,6 +5,7 @@
     ./lib-home/tmux.nix
     ./lib-home/nvim/nvim.nix
     ./lib-home/alacritty.nix
+    ./lib-home/starship.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
