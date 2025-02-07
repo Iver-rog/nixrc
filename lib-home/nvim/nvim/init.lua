@@ -41,7 +41,8 @@ vim.g.gruvbox_material_diagnostic_text_highlight = false
 vim.g.gruvbox_material_diagnostic_line_highlight = false
 vim.g.gruvbox_material_diagnostic_virtual_text = 'not grey' -- 'grey'
 -- vim.g.gruvbox_material_foreground = 'hard'
--- vim.g.gruvbox_material_background = 'hard'
+vim.g.gruvbox_material_background = 'hard'
+-- vim.o.background = "light"
 vim.cmd("colorscheme gruvbox-material")
 
 -- Line numbers and relative lines

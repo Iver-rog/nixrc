@@ -122,6 +122,7 @@
       paraview
       localsend
       transmission-qt
+      calibre
       # Terminal programs
       gh
       ripgrep # needed dependency for treesitter nvim plugin
