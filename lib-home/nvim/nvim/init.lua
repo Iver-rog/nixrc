@@ -1,4 +1,3 @@
-
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.g.have_nerd_font = true
@@ -97,7 +96,9 @@ vim.keymap.set('n', '<leader>s.', builtin.grep_string, { desc = '[S]earch [R]res
 vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers'})
 
 
-require'nvim-tree'.setup {}
+require'nvim-tree'.setup {
+  view = { width = 20, },
+}
 
 -- Draws colored bars to indicate git changes
 require('gitsigns').setup {
