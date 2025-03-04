@@ -124,6 +124,7 @@
       transmission-qt
       calibre
       # Terminal programs
+      cloc
       lsd
       gh
       ripgrep # needed dependency for treesitter nvim plugin

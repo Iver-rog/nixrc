@@ -85,7 +85,7 @@
     enable = true;
     shellAliases = {
       sl = "ls";
-      myhint = "echo sudo nixos-rebuild switch --flake ./.#iver";
+      myhint = "echo 'sudo nixos-rebuild switch --flake ./.#iver \ncloc'";
       grep = "grep --color=auto";
       octave = "octave --silent";
       ntnu = "cd /home/iver/Documents/NTNU";
