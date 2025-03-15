@@ -124,6 +124,8 @@
       transmission-qt
       calibre
       # Terminal programs
+      tldr
+      renameutils
       cloc
       lsd
       gh
