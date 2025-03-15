@@ -54,7 +54,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -121,7 +121,7 @@
       resources
       paraview
       localsend
-      transmission-qt
+      transmission_4-qt
       calibre
       # Terminal programs
       tldr
