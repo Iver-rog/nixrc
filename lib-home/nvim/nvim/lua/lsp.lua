@@ -23,6 +23,7 @@ local servers = {
   clangd = {},
   pyright = {},
   rust_analyzer = {},
+  wgsl_analyzer = {},
   lua_ls = {
     settings = {
       Lua = {
