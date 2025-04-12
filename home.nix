@@ -92,6 +92,7 @@
       rust = "cd /home/iver/Documents/Programering/Rust";
       nivm = "nvim";
       ls = "lsd";
+      y = "yazi";
     };
     bashrcExtra = ''
       set -o vi

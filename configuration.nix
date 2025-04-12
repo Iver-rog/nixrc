@@ -124,6 +124,7 @@
       transmission_4-qt
       calibre
       # Terminal programs
+      yazi
       tldr
       renameutils
       cloc
