@@ -58,6 +58,10 @@ in
       }
     ];
     extraConfig = ''
+      bind c new-window   -c "#{pane_current_path}"
+      bind % split-window   -h -c "#{pane_current_path}"
+      bind '"' split-window -v -c "#{pane_current_path}"
+
       bind O display-popup -B -E -h 75% -w 75% /home/iver/Documents/Programering/Rust/sessionx-clone/target/release/sessionx-clone 
       '';
   };
