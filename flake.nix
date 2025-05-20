@@ -23,7 +23,7 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-    nixosConfigurations.iver = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.razer = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
         ./configuration.nix
