@@ -108,7 +108,7 @@
       vlc
       libreoffice-qt6-fresh
       blender
-      gimp
+      gimp3
       darktable
       chromium
       joplin-desktop
