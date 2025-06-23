@@ -105,7 +105,7 @@
       firefox
       thunderbird
       freecad-wayland
-      vlc
+      mpv
       libreoffice-qt6-fresh
       blender
       gimp3
