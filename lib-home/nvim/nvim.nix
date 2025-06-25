@@ -45,6 +45,7 @@
       sumneko-lua-language-server
 
       vscode-extensions.vadimcn.vscode-lldb
+      wgsl-analyzer
     ];
   };
   xdg.configFile.nvim = {
