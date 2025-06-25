@@ -120,8 +120,9 @@ require('gitsigns').setup {
   end
 }
 
-require('nvim-treesitter').setup{
-  ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'query', 'vim', 'vimdoc', 'python', 'wgsl'},
+require('nvim-treesitter.configs').setup {
+  -- ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'query', 'vim', 'vimdoc', 'python', 'wgsl'},
+  auto_install = false,
   highlight = {
     enable = true,
   },
@@ -144,3 +145,4 @@ vim.cmd('highlight FoldColumn ctermfg=NONE guifg=NONE')
 require("lsp")
 require("mini-nvim")
 require("debugger")
+require("wgsl-hightlighting")
