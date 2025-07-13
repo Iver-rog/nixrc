@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
       ./vm.nix
       ./tor.nix
+      ./vpn.nix
       inputs.home-manager.nixosModules.default
     ];
 
