@@ -19,6 +19,25 @@ capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp'
 --  - settings (table): Override the default settings passed when initializing the server.
 --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
 -- Define your servers
+lspconfig.angularls.setup {
+  cmd = {
+    "ngserver",
+    "--stdio",
+    "--tsProbeLocations", vim.fn.stdpath("data") .. "/mason/packages/typescript-language-server/node_modules",
+    "--ngProbeLocations", vim.fn.stdpath("data") .. "/mason/packages/@angular/language-server/node_modules",
+  },
+  on_new_config = function(new_config,new_root_dir)
+    new_config.cmd = {
+      "ngserver",
+      "--stdio",
+      "--tsProbeLocations", new_root_dir .. "/node_modules",
+      "--ngProbeLocations", new_root_dir .. "/node_modules/@angular/language-server",
+    }
+  end,
+  filetypes = { "typescript", "html", "typescriptreact", "typescript.tsx" },
+  root_dir = lspconfig.util.root_pattern("angular.json", "project.json")
+}
+
 local servers = {
   clangd = {},
   pyright = {},
@@ -36,12 +55,27 @@ local servers = {
       },
     },
   },
+  ts_ls = {
+      filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact" },
+  },
+  angularls = {
+    filetypes = { "typescript", "html", "typescriptreact" },
+  }
 }
 
 -- Setup each LSP server
 for server_name, server_settings in pairs(servers) do
   server_settings.capabilities = capabilities
-  lspconfig[server_name].setup(server_settings)
+
+  if server_name == "angularls" then
+    lspconfig[server_name].setup(vim.tbl_extend("force", server_settings, {
+      cmd = { "ngserver", "--stdio" },
+      filetypes = { "typescript", "html", "typescriptreact", "typescript.tsx" },
+      root_dir = lspconfig.util.root_pattern("angular.json", "project.json"),
+    }))
+  else
+    lspconfig[server_name].setup(server_settings)
+  end
 end
 
 

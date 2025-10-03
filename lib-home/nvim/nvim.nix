@@ -46,6 +46,10 @@
 
       vscode-extensions.vadimcn.vscode-lldb
       wgsl-analyzer
+
+      nodePackages.typescript
+      nodePackages.typescript-language-server
+      angular-language-server
     ];
   };
   xdg.configFile.nvim = {
