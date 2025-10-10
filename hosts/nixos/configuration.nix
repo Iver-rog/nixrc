@@ -5,7 +5,7 @@ let
 in
 {
   imports = [
-    ../../hardware-configuration.nix
+    ./hardware-configuration.nix
     ../../vm.nix
     ../../tor.nix
     ../../vpn.nix
