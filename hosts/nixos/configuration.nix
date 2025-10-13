@@ -9,6 +9,7 @@ in
     ../../vm.nix
     ../../tor.nix
     ../../vpn.nix
+    ../../home.nix
     inputs.home-manager.nixosModules.default
   ];
 
