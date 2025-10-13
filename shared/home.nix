@@ -8,25 +8,12 @@
     ../lib-home/starship.nix
   ];
 
-  # Home Manager packages from shared development
   home.packages = [
     (import ../lib-home/vm-script.nix { inherit pkgs; })
-  ] ++ (import ../shared/development.nix { inherit pkgs; }).packages;
+  ] ++ (import ./development.nix { inherit pkgs; }).packages;
 
-  # Git configuration
-  programs.git = {
-    enable = true;
-    userName = "iver";
-    userEmail = "iverrog@gmail.com";
-    diff-so-fancy = {
-      enable = true;
-    };
-    extraConfig.credential.helper = "manager";
-    extraConfig.credential."https://github.com".username = "Iver-rog";
-    extraConfig.credential.credentialStore = "cache";
-  };
+  programs.home-manager.enable = true;
 
-  # Bash configuration
   programs.bash = {
     enable = true;
     shellAliases = {
@@ -55,26 +42,34 @@
     '';
   };
 
-  # Input configuration for vi mode
   home.file.".inputrc".text = ''
     set show-mode-in-prompt on
     set vi-cmd-mode-string "\1\e[2 q\2"
     set vi-ins-mode-string "\1\e[6 q\2"
   '';
 
-  # Octave configuration
+  programs.git = {
+    enable = true;
+    userName = "iver";
+    userEmail = "iverrog@gmail.com";
+    diff-so-fancy = {
+      enable = true;
+    };
+    extraConfig.credential.helper = "manager";
+    extraConfig.credential."https://github.com".username = "Iver-rog";
+    extraConfig.credential.credentialStore = "cache";
+  };
+
   home.file.".octaverc".text = ''
-    PS1 ('\033[34m\033[039;044m octave:\#\033[049;034m\033[032;001m\w> \033[039;000m')
+    PS1 ('\033[34m\033[039;044m octave:\#\033[049;034m\033[032;001m\w> \033[039;000m')
   '';
 
-  # Direnv configuration
   programs.direnv = {
     enable = true;
     enableBashIntegration = true;
     nix-direnv.enable = true;
   };
 
-  # Solaar configuration
   home.file.".config/solaar/rules.yaml".text = ''
     %YAML 1.3
     ---
@@ -97,3 +92,4 @@
     ...
   '';
 }
+

@@ -79,11 +79,10 @@ in
     useUserPackages = true;
     users = {
       "iver" = {
-        imports = [ ../../shared/home-manager.nix ];
+        imports = [ ../../shared/home.nix ];
         home.username = "iver";
         home.homeDirectory = "/home/iver";
         home.stateVersion = "24.05";
-        programs.home-manager.enable = true;
         
         # Add personal packages to home-manager
         home.packages = (import ../../personal/packages.nix { inherit pkgs; }).packages;
