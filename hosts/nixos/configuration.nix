@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, user,... }:
 
 let
   personalPackages = (import ../../personal/packages.nix { inherit pkgs; }).systemPackages;
@@ -65,7 +65,7 @@ in
   };
 
   # User configuration
-  users.users.iver = {
+  users.users.${user} = {
     isNormalUser = true;
     description = "Iver Rogstadkjernet";
     extraGroups = [ "networkmanager" "wheel" "openrazer" ];
@@ -74,14 +74,14 @@ in
 
   # Home Manager
   home-manager = {
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = { inherit inputs user; };
     useGlobalPkgs = true;
     useUserPackages = true;
     users = {
-      "iver" = {
+      "${user}" = {
         imports = [ ../../shared/home.nix ];
-        home.username = "iver";
-        home.homeDirectory = "/home/iver";
+        home.username = "${user}";
+        home.homeDirectory = "/home/${user}";
         home.stateVersion = "24.05";
         
         # Add personal packages to home-manager
@@ -113,7 +113,7 @@ in
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.extraOptions = ''
-    trusted-users = root iver
+    trusted-users = root ${user}
   '';
 
   system.stateVersion = "24.05";
