@@ -7,7 +7,6 @@
     firefox
     thunderbird
     chromium
-    teams-for-linux
 
     # Media and entertainment
     vlc
