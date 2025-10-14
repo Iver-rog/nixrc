@@ -1,7 +1,6 @@
 { pkgs, ... }:
 
 {
-  # Personal applications and tools
   packages = with pkgs; [
     # Browsers and communication
     firefox
@@ -42,7 +41,6 @@
     resources
   ];
 
-  # Personal system packages (for NixOS environment.systemPackages)
   systemPackages = with pkgs; [
     kdePackages.partitionmanager
     polychromatic
