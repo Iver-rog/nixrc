@@ -6,9 +6,9 @@ in
 {
   imports = [
     ./hardware-configuration.nix
-    ../../vm.nix
-    ../../tor.nix
-    ../../vpn.nix
+    ../../lib/vm.nix
+    ../../lib/tor.nix
+    ../../lib/vpn.nix
     inputs.home-manager.nixosModules.default
   ];
 
