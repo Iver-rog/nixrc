@@ -26,7 +26,7 @@
     useUserPackages = true;
     users = {
       "iver" = {
-        imports = [ ../../shared/home.nix ];
+        imports = [ ../../home.nix ];
         home.username = "iver";
         home.homeDirectory = "/home/iver";
         home.stateVersion = "24.05";

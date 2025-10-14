@@ -1,7 +1,7 @@
 { config, pkgs, inputs, user,... }:
 
 let
-  personalPackages = (import ../../personal/packages.nix { inherit pkgs; }).systemPackages;
+  personalPackages = (import ../../packages.nix { inherit pkgs; }).systemPackages;
 in
 {
   imports = [
@@ -69,7 +69,7 @@ in
     isNormalUser = true;
     description = "Iver Rogstadkjernet";
     extraGroups = [ "networkmanager" "wheel" "openrazer" ];
-    packages = (import ../../personal/packages.nix { inherit pkgs; }).packages;
+    packages = (import ../../packages.nix { inherit pkgs; }).packages;
   };
 
   # Home Manager
@@ -79,13 +79,13 @@ in
     useUserPackages = true;
     users = {
       "${user}" = {
-        imports = [ ../../shared/home.nix ];
+        imports = [ ../../home.nix ];
         home.username = "${user}";
         home.homeDirectory = "/home/${user}";
         home.stateVersion = "24.05";
         
         # Add personal packages to home-manager
-        home.packages = (import ../../personal/packages.nix { inherit pkgs; }).packages;
+        home.packages = (import ../../packages.nix { inherit pkgs; }).packages;
         
       };
     };

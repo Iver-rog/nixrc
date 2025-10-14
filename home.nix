@@ -2,15 +2,15 @@
 
 {
   imports = [
-    ../lib-home/tmux.nix
-    ../lib-home/nvim/nvim.nix
-    ../lib-home/alacritty.nix
-    ../lib-home/starship.nix
+    ./lib-home/tmux.nix
+    ./lib-home/nvim/nvim.nix
+    ./lib-home/alacritty.nix
+    ./lib-home/starship.nix
   ];
 
   home.packages = [
-    (import ../lib-home/vm-script.nix { inherit pkgs; })
-  ] ++ (import ./development.nix { inherit pkgs; }).packages;
+    (import ./lib-home/vm-script.nix { inherit pkgs; })
+  ] ++ (import ./lib/development.nix { inherit pkgs; }).packages;
 
   programs.home-manager.enable = true;
 
