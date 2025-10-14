@@ -87,13 +87,6 @@ in
         # Add personal packages to home-manager
         home.packages = (import ../../personal/packages.nix { inherit pkgs; }).packages;
         
-        # VM-specific dconf settings
-        dconf.settings = {
-          "org/virt-manager/virt-manager/connections" = {
-            autoconnect = ["qemu:///system"];
-            uris = ["qemu:///system"];
-          };
-        };
       };
     };
   };

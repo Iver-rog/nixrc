@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, user, ... }: {
   environment.systemPackages = with pkgs; [ virt-manager spice-gtk swtpm ];
   security.polkit.enable = true;
   virtualisation = {
@@ -14,5 +14,15 @@
       };
     };
     spiceUSBRedirection.enable = true;
+  };
+
+  home-manager.users."${user}" = {
+
+    dconf.settings = {
+      "org/virt-manager/virt-manager/connections" = {
+      autoconnect = ["qemu:///system"];
+      uris = ["qemu:///system"];
+      };
+    };
   };
 }
