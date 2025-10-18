@@ -25,13 +25,8 @@ in
   i18n.defaultLocale = "nb_NO.UTF-8";
 
   # Desktop Environment
-  services.xserver.enable = true;
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
-  services.xserver.xkb = {
-    layout = "no";
-    variant = "";
-  };
   console.keyMap = "no";
 
   # Audio
