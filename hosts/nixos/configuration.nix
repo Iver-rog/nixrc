@@ -28,6 +28,10 @@ in
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
   console.keyMap = "no";
+    services.xserver.xkb = {
+    layout = "no";
+    variant = "";
+  };
 
   # Audio
   services.pulseaudio.enable = false;
