@@ -39,6 +39,10 @@
                  fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
         git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
       }
+      hl() {
+        echo "halla"
+        rg "''${1}" --passthrough --color=always | bat --plain
+      }
     '';
   };
 
