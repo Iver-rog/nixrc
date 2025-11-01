@@ -13,6 +13,7 @@
       nvim-tree-lua
       gitsigns-nvim
       mini-nvim # [S]elect [a]round [(] pattern
+      colorizer
 
       # == LSP ==
       nvim-lspconfig
