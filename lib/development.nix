@@ -24,6 +24,7 @@
     wget
     unzip
     trash-cli
+    entr
 
     # Container and virtualization tools
     distrobox
