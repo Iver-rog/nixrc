@@ -9,6 +9,7 @@ in
     ../../lib/vm.nix
     ../../lib/tor.nix
     ../../lib/vpn.nix
+    ../../hyprland.nix
     inputs.home-manager.nixosModules.default
   ];
 
