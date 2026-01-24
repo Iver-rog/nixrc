@@ -21,6 +21,8 @@
       # Useful status updates for LSP
       fidget-nvim
 
+      typst-preview-nvim
+
       # == Auto Complete ==
       nvim-cmp
       lazydev-nvim
@@ -44,6 +46,7 @@
       clang-tools #c/c++
       pyright
       sumneko-lua-language-server
+      tinymist
 
       vscode-extensions.vadimcn.vscode-lldb
       wgsl-analyzer

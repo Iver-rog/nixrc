@@ -39,6 +39,13 @@ lspconfig.angularls.setup {
 }
 
 local servers = {
+  tinymist = {
+    settings = {
+      formatterMode = "typstyle",
+      exportPdf = "onType",
+      semanticTokens = "disable"
+    }
+  },
   clangd = {},
   pyright = {},
   rust_analyzer = {},

@@ -129,6 +129,8 @@ require('nvim-treesitter.configs').setup {
   indent = {enable = true},
 }
 
+require('typst-preview').setup{}
+
 vim.o.foldlevel = 99
 vim.o.foldcolumn = '1'
 vim.wo.foldnestmax = 1
