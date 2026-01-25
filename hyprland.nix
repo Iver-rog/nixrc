@@ -18,7 +18,7 @@
 
     hyprpaper
     hyprsunset
-    rofi-wayland
+    rofi
     hyprpicker
     gnome-icon-theme
   ];

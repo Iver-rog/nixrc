@@ -45,7 +45,7 @@
       nil # nix language server
       clang-tools #c/c++
       pyright
-      sumneko-lua-language-server
+      lua-language-server
       tinymist
 
       vscode-extensions.vadimcn.vscode-lldb

@@ -6,7 +6,7 @@ in
 {
   imports = [
     ./hardware-configuration.nix
-    ../../lib/vm.nix
+    # ../../lib/vm.nix
     ../../lib/tor.nix
     ../../lib/vpn.nix
     ../../hyprland.nix
