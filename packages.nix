@@ -33,6 +33,7 @@
     # Scientific and analysis
     octave
     paraview
+    typst
 
     # 3D printing
     orca-slicer
