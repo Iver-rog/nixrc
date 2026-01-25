@@ -71,15 +71,15 @@ vim.keymap.set('n', '\\', ":NvimTreeToggle<Cr>", opts)
 -- Apply lsp server formating
 vim.keymap.set('n', '<leader>cf', function() vim.lsp.buf.format({ async = true }) end, opts)
 
-
+vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
 
 require('telescope').setup {
-    extensions = {
-      ['ui-select'] = {
-        require('telescope.themes').get_dropdown(),
-      },
+  extensions = {
+    ['ui-select'] = {
+      require('telescope.themes').get_dropdown(),
     },
-  }
+  },
+}
 
 pcall(require('telescope').load_extension, 'fzf')
 pcall(require('telescope').load_extension, 'ui-select')
@@ -97,7 +97,7 @@ vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find exis
 
 
 require'nvim-tree'.setup {
-  view = { width = 20, },
+  view = { width = 25, },
 }
 
 -- Draws colored bars to indicate git changes
@@ -143,6 +143,24 @@ vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
 vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 vim.cmd('highlight Folded ctermbg=NONE guibg=NONE')
 vim.cmd('highlight FoldColumn ctermfg=NONE guifg=NONE')
+
+
+-- Global floating window style
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
+vim.api.nvim_set_hl(0, "FloatBorder", { link = "QuickFixLine" })
+
+local border = { "╭","─","╮","│","╯","─","╰","│" }
+
+vim.lsp.handlers["textDocument/hover"] =
+  vim.lsp.with(vim.lsp.handlers.hover, { border = border })
+
+vim.lsp.handlers["textDocument/signatureHelp"] =
+  vim.lsp.with(vim.lsp.handlers.signature_help, { border = border })
+
+vim.diagnostic.config({
+  float = { border = border },
+})
+
 
 require("lsp")
 require("mini-nvim")

@@ -237,14 +237,8 @@ cmp.setup {
   completion = { completeopt = 'menu,menuone,noinsert' },
 
   window = {
-    completion = cmp.config.window.bordered({
-      border = {"╭","─","╮","│","╯","─","╰","│"},
-      winhighlight = "Normal:None,FloatBorder:QuickFixLine,CursorLine:PmenuThumb,Search:None",
-    }),
-    documentation = cmp.config.window.bordered({
-      border = {"╭","─","╮","│","╯","─","╰","│"},
-      winhighlight = "Normal:None,FloatBorder:QuickFixLine,CursorLine:PmenuThumb,Search:None",
-    })
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
   },
 
   -- For an understanding of why these mappings were
