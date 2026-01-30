@@ -1,8 +1,5 @@
 require('fidget').setup({})
 
-local lspconfig = require('lspconfig')
-
-
 -- LSP servers and clients are able to communicate to each other what features they support.
 --  By default, Neovim doesn't support everything that is in the LSP specification.
 --  When you add nvim-cmp, luasnip, etc. Neovim now has *more* capabilities.
@@ -19,24 +16,6 @@ capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp'
 --  - settings (table): Override the default settings passed when initializing the server.
 --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
 -- Define your servers
-lspconfig.angularls.setup {
-  cmd = {
-    "ngserver",
-    "--stdio",
-    "--tsProbeLocations", vim.fn.stdpath("data") .. "/mason/packages/typescript-language-server/node_modules",
-    "--ngProbeLocations", vim.fn.stdpath("data") .. "/mason/packages/@angular/language-server/node_modules",
-  },
-  on_new_config = function(new_config,new_root_dir)
-    new_config.cmd = {
-      "ngserver",
-      "--stdio",
-      "--tsProbeLocations", new_root_dir .. "/node_modules",
-      "--ngProbeLocations", new_root_dir .. "/node_modules/@angular/language-server",
-    }
-  end,
-  filetypes = { "typescript", "html", "typescriptreact", "typescript.tsx" },
-  root_dir = lspconfig.util.root_pattern("angular.json", "project.json")
-}
 
 local servers = {
   tinymist = {
@@ -65,24 +44,26 @@ local servers = {
   ts_ls = {
       filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact" },
   },
-  angularls = {
-    filetypes = { "typescript", "html", "typescriptreact" },
-  }
+ angularls = {
+    cmd = { "ngserver", "--stdio" },
+    filetypes = { "typescript", "html", "typescriptreact", "typescript.tsx" },
+    root_dir = vim.fs.root(0, {"angular.json", "project.json"}),
+    on_new_config = function(new_config, new_root_dir)
+      new_config.cmd = {
+        "ngserver",
+        "--stdio",
+        "--tsProbeLocations", new_root_dir .. "/node_modules",
+        "--ngProbeLocations", new_root_dir .. "/node_modules/@angular/language-server",
+      }
+    end,
+  },
 }
 
 -- Setup each LSP server
 for server_name, server_settings in pairs(servers) do
   server_settings.capabilities = capabilities
-
-  if server_name == "angularls" then
-    lspconfig[server_name].setup(vim.tbl_extend("force", server_settings, {
-      cmd = { "ngserver", "--stdio" },
-      filetypes = { "typescript", "html", "typescriptreact", "typescript.tsx" },
-      root_dir = lspconfig.util.root_pattern("angular.json", "project.json"),
-    }))
-  else
-    lspconfig[server_name].setup(server_settings)
-  end
+  vim.lsp.config(server_name,server_settings)
+  vim.lsp.enable(server_name)
 end
 
 
@@ -191,18 +172,6 @@ local ensure_installed = vim.tbl_keys(servers or {})
 vim.list_extend(ensure_installed, {
   'stylua', -- Used to format Lua code
 })
-
--- for _, lsp in ipairs(servers) do
---   lspconfig[lsp].setup {
---     on_attach = function(client, bufnr)
---       local opts = { noremap = true, silent = true }
---       vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
---     end,
---     flags = {
---       debounce_text_changes = 150,
---     }
---   }
--- end
 
 
 -- nvim-cmp setup for completion
