@@ -14,6 +14,7 @@
       gitsigns-nvim
       mini-nvim # [S]elect [a]round [(] pattern
       colorizer
+      dropbar-nvim # breadcrumbs
 
       # == LSP ==
       nvim-lspconfig

@@ -161,6 +161,7 @@ vim.diagnostic.config({
   float = { border = border },
 })
 
+require("dropbar").setup{}
 
 require("lsp")
 require("mini-nvim")
