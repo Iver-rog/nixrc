@@ -16,6 +16,11 @@
     playerctl
     # networkmanagerapplet
 
+    #screenshot
+    grim
+    slurp
+    wl-clipboard-rs
+
     hyprpaper
     hyprsunset
     rofi
