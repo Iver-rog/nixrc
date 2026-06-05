@@ -120,14 +120,12 @@ require('gitsigns').setup {
   end
 }
 
-require('nvim-treesitter.configs').setup {
-  -- ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'query', 'vim', 'vimdoc', 'python', 'wgsl'},
-  auto_install = false,
-  highlight = {
-    enable = true,
-  },
-  indent = {enable = true},
-}
+vim.api.nvim_create_autocmd('FileType', {
+  group = vim.api.nvim_create_augroup('treesitter-highlight', { clear = true }),
+  callback = function(args)
+    pcall(vim.treesitter.start, args.buf)
+  end,
+})
 
 require('typst-preview').setup{}
 
@@ -139,7 +137,7 @@ vim.o.foldenable = true
 vim.o.foldlevelstart = 99
 vim.o.foldtext = [[substitute(getline(v:foldstart),'\\t',repeat('\ ',&tabstop),'g').' ... ' . '(' . (v:foldend - v:foldstart + 1) . ' lines)']]
 vim.wo.foldmethod = "syntax"
-vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
+vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 vim.cmd('highlight Folded ctermbg=NONE guibg=NONE')
 vim.cmd('highlight FoldColumn ctermfg=NONE guifg=NONE')

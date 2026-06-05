@@ -7,6 +7,7 @@
     plugins = with pkgs.vimPlugins; [
       vim-tmux-navigator
       nvim-treesitter.withAllGrammars
+      plenary-nvim
       gruvbox-material
       which-key-nvim
       telescope-nvim
@@ -52,8 +53,8 @@
       vscode-extensions.vadimcn.vscode-lldb
       wgsl-analyzer
 
-      nodePackages.typescript
-      nodePackages.typescript-language-server
+      typescript
+      typescript-language-server
       angular-language-server
     ];
   };
