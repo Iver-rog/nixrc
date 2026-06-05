@@ -35,7 +35,7 @@
     alacritty
     wget
     git
-    nixfmt-classic
+    nixfmt
     unzip
     gnuplot
     devenv

@@ -26,6 +26,7 @@
     # networkmanagerapplet
     loupe # immage viewer
     sunsetr # blue light filter
+    swaybg
 
     #screenshot
     grim
